@@ -1,0 +1,333 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0f1117;
+  --surface: #1a1d27;
+  --border: #2e3147;
+  --accent: #5b8dee;
+  --accent-dim: #3a5bbd;
+  --text: #e2e4f0;
+  --text-dim: #8892b0;
+  --res: #4a4e6a;
+  --res-text: #636987;
+  --font-mono: "Cascadia Code", "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+  --font-sans: system-ui, -apple-system, sans-serif;
+  --radius: 6px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+header {
+  padding: 2rem 2rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  font-family: var(--font-mono);
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+
+.subtitle {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ── Inputs ─────────────────────────────────── */
+
+.inputs {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.input-group:first-child {
+  flex: 1;
+  min-width: 260px;
+}
+
+label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+input[type="text"] {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  padding: 0.55rem 0.8rem;
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+}
+
+input[type="text"]:focus {
+  border-color: var(--accent);
+}
+
+input[type="text"]::placeholder {
+  color: var(--res-text);
+}
+
+/* ── Autocomplete dropdown ───────────────────── */
+
+.autocomplete-wrapper {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  list-style: none;
+  max-height: 260px;
+  overflow-y: auto;
+  z-index: 100;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown li {
+  padding: 0.5rem 0.8rem;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.dropdown li .long-name {
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  font-family: var(--font-sans);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdown li:hover,
+.dropdown li[aria-selected="true"] {
+  background: var(--border);
+}
+
+/* ── Register info header ────────────────────── */
+
+#reg-info {
+  animation: fade-in 0.15s ease;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+#reg-title {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.reg-desc {
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  margin-top: 0.25rem;
+  max-width: 680px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.arm-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  border: 1px solid var(--accent-dim);
+  border-radius: var(--radius);
+  padding: 0.3rem 0.7rem;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.arm-link:hover {
+  background: rgba(91, 141, 238, 0.12);
+}
+
+/* ── Bit fields table ────────────────────────── */
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+thead th {
+  background: var(--surface);
+  padding: 0.55rem 0.85rem;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+tbody tr.is-reserved {
+  color: var(--res-text);
+}
+
+tbody tr.is-reserved:hover {
+  background: transparent;
+}
+
+tbody td {
+  padding: 0.5rem 0.85rem;
+  vertical-align: top;
+}
+
+td.bits,
+td.field-name,
+td.field-val {
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+td.bits {
+  color: var(--text-dim);
+  width: 6rem;
+}
+
+td.field-name {
+  width: 10rem;
+}
+
+td.field-val {
+  width: 7rem;
+}
+
+td.field-val .hex {
+  color: var(--accent);
+}
+
+td.field-val .bin {
+  color: var(--text-dim);
+  font-size: 0.78rem;
+}
+
+td.meaning {
+  color: var(--text-dim);
+  line-height: 1.4;
+}
+
+td.meaning .enum-match {
+  color: var(--text);
+  font-weight: 500;
+}
+
+td.meaning .desc {
+  font-size: 0.82rem;
+  margin-top: 0.2rem;
+  color: var(--text-dim);
+}
+
+/* ── Reserved row styling ────────────────────── */
+
+tr.is-reserved td.field-name {
+  color: var(--res-text);
+}
+
+tr.is-reserved td.bits {
+  color: var(--res);
+}
+
+tr.is-reserved td.field-val .hex {
+  color: var(--res-text);
+}
+
+/* ── Notices ─────────────────────────────────── */
+
+.notice {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.notice code {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+}
+
+/* ── Scrollbar ───────────────────────────────── */
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
