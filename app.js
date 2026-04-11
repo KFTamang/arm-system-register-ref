@@ -13,6 +13,7 @@ const dropdown    = document.getElementById("reg-dropdown");
 const valInput    = document.getElementById("val-input");
 const regInfo     = document.getElementById("reg-info");
 const regTitle    = document.getElementById("reg-title");
+const regBadge    = document.getElementById("reg-state-badge");
 const regDesc     = document.getElementById("reg-desc");
 const regLink     = document.getElementById("reg-link");
 const fieldsBody  = document.getElementById("fields-body");
@@ -80,10 +81,12 @@ function showSuggestions(query) {
 
     const longSpan = document.createElement("span");
     longSpan.className = "long-name";
-    longSpan.textContent = reg.long_name || "";
+    const stateLabel = { AArch64: "AArch64", AArch32: "AArch32", ext: "Ext" };
+    const stateTag = reg.state ? `[${stateLabel[reg.state] || reg.state}]` : "";
+    longSpan.textContent = [stateTag, reg.long_name].filter(Boolean).join(" ");
 
     li.appendChild(nameSpan);
-    if (reg.long_name) li.appendChild(longSpan);
+    if (longSpan.textContent) li.appendChild(longSpan);
 
     li.addEventListener("mousedown", e => {
       e.preventDefault(); // keep focus on input
@@ -157,9 +160,14 @@ function selectRegister(name) {
   hideDropdown();
 
   // Header
-  regTitle.textContent = reg.long_name
-    ? `${reg.name}  —  ${reg.long_name}`
-    : reg.name;
+  regTitle.textContent = reg.long_name ? `${reg.name}  —  ${reg.long_name}` : reg.name;
+
+  const stateLabel = { AArch64: "AArch64", AArch32: "AArch32", ext: "External" };
+  const stateClass = { AArch64: "aarch64", AArch32: "aarch32", ext: "ext" };
+  regBadge.textContent = stateLabel[reg.state] || reg.state || "";
+  regBadge.className = "state-badge " + (stateClass[reg.state] || "");
+  regBadge.hidden = !reg.state;
+
   regDesc.textContent = reg.description || "";
   regDesc.hidden = !reg.description;
 

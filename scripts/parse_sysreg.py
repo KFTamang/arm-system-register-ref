@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Parse the ARM AArch64 SysReg XML tarball into registers.json.
+Parse the ARM A-Profile SysReg XML tarball into registers.json.
+Covers AArch64, AArch32, and External (memory-mapped) registers.
 
 Usage:
     python3 scripts/parse_sysreg.py <SysReg_xml_*.tar.gz> [--out data/registers.json]
@@ -45,20 +46,19 @@ def first_text(parent, *tags):
     return ""
 
 
-def make_arm_url(short_name, long_name):
-    """
-    Construct the ARM Architecture Reference URL for a register.
+STATE_PATH = {
+    "AArch64": "AArch64-Registers",
+    "AArch32": "AArch32-Registers",
+    "ext":     "External-Registers",
+}
 
-    Example:
-      short_name="SCTLR_EL1", long_name="System Control Register (EL1)"
-      -> https://developer.arm.com/documentation/ddi0601/latest/AArch64-Registers/SCTLR-EL1--System-Control-Register--EL1-
-    """
-    base = "https://developer.arm.com/documentation/ddi0601/latest/AArch64-Registers"
-    short_slug = short_name.replace("_", "-")
+
+def make_arm_url(short_name, long_name, state):
+    path = STATE_PATH.get(state, "AArch64-Registers")
+    base = f"https://developer.arm.com/documentation/ddi0601/latest/{path}"
+    short_slug = re.sub(r"[^A-Za-z0-9]+", "-", short_name).strip("-")
     if long_name:
-        # Replace non-alphanumeric characters with '-', collapse runs of '-'
-        long_slug = re.sub(r"[^A-Za-z0-9]+", "-", long_name)
-        long_slug = long_slug.strip("-") + "-"
+        long_slug = re.sub(r"[^A-Za-z0-9]+", "-", long_name).strip("-") + "-"
         slug = f"{short_slug}--{long_slug}"
     else:
         slug = short_slug
@@ -95,28 +95,30 @@ def parse_field_values(field_el):
 
 
 def parse_register(xml_bytes, filename):
-    """Parse a single AArch64 register XML file. Returns a dict or None."""
+    """Parse one register XML file. Returns a dict or None."""
     try:
         root = ET.fromstring(xml_bytes)
     except ET.ParseError as e:
         print(f"  XML parse error in {filename}: {e}", file=sys.stderr)
         return None
 
-    # Support both flat and nested structures
     reg_el = root.find(".//register")
     if reg_el is None:
         return None
 
-    # Only AArch64 registers
+    # Map execution_state to our state labels
     exec_state = reg_el.get("execution_state", "")
-    if exec_state and exec_state != "AArch64":
-        return None
+    if exec_state == "AArch64":
+        state = "AArch64"
+    elif exec_state == "AArch32":
+        state = "AArch32"
+    else:
+        state = "ext"   # memory-mapped / external registers have no execution_state
 
     short_name = first_text(reg_el, "reg_short_name")
     if not short_name:
-        # Fall back to filename: AArch64-SCTLR_EL1.xml -> SCTLR_EL1
-        stem = Path(filename).stem  # e.g. AArch64-SCTLR_EL1
-        short_name = stem.replace("AArch64-", "").replace("-", "_")
+        stem = Path(filename).stem
+        short_name = re.sub(r"^(AArch64|AArch32)-", "", stem).replace("-", "_")
 
     long_name = first_text(reg_el, "reg_long_name")
     description = first_text(reg_el, "reg_purpose", "reg_description", "purpose")
@@ -166,7 +168,8 @@ def parse_register(xml_bytes, filename):
         "name": short_name,
         "long_name": long_name,
         "description": description,
-        "arm_url": make_arm_url(short_name, long_name),
+        "state": state,
+        "arm_url": make_arm_url(short_name, long_name, state),
         "fields": fields,
     }
 
@@ -183,11 +186,9 @@ def main():
     print(f"Opening {args.tarball} ...")
     with tarfile.open(args.tarball, "r:gz") as tf:
         members = [m for m in tf.getmembers() if m.name.endswith(".xml")]
-        # Only AArch64 register files
-        aarch64_members = [m for m in members if "/AArch64-" in m.name or m.name.startswith("AArch64-")]
-        print(f"Found {len(aarch64_members)} AArch64 XML files (of {len(members)} total)")
+        print(f"Found {len(members)} XML files total")
 
-        for member in aarch64_members:
+        for member in members:
             f = tf.extractfile(member)
             if f is None:
                 continue

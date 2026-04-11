@@ -18,7 +18,7 @@
 <body>
   <header>
     <h1>ASRF</h1>
-    <p class="subtitle">AArch64 System Register Reference</p>
+    <p class="subtitle">A-Profile System Register Reference</p>
   </header>
 
   <main>
@@ -57,6 +57,7 @@
       <div class="reg-header">
         <div>
           <h2 id="reg-title"></h2>
+          <span id="reg-state-badge" class="state-badge"></span>
           <p id="reg-desc" class="reg-desc"></p>
         </div>
         <a id="reg-link" href="#" target="_blank" rel="noopener" class="arm-link">
@@ -80,7 +81,7 @@
     </section>
 
     <p id="no-data-msg" class="notice" hidden>
-      Register data not loaded. Run <code>scripts/parse_sysreg.py</code> to generate
+      Register data not loaded. Run <code>scripts/parse_aarchmrs.py</code> to generate
       <code>data/registers.json</code>, then serve this directory over HTTP.
     </p>
 
