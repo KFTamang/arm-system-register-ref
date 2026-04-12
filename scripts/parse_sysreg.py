@@ -58,7 +58,10 @@ def make_arm_url(short_name, long_name, state):
     base = f"https://developer.arm.com/documentation/ddi0601/latest/{path}"
     short_slug = re.sub(r"[^A-Za-z0-9]+", "-", short_name).strip("-")
     if long_name:
-        long_slug = re.sub(r"[^A-Za-z0-9]+", "-", long_name).strip("-") + "-"
+        # Each non-alphanumeric character becomes its own '-' (no collapsing with +)
+        # so "(EL1)" → "--EL1-" → strip → "--EL1", matching ARM's URL scheme.
+        # No trailing hyphen appended — the user confirmed it breaks the link.
+        long_slug = re.sub(r"[^A-Za-z0-9]", "-", long_name).strip("-")
         slug = f"{short_slug}--{long_slug}"
     else:
         slug = short_slug
