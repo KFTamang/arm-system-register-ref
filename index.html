@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ASRF — AArch64 System Register Reference</title>
+  <title>ASRF — Arm System Register Reference</title>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSQQ2718YQ"></script>
   <script>
@@ -18,11 +18,19 @@
 <body>
   <header>
     <h1>ASRF</h1>
-    <p class="subtitle">A-Profile System Register Reference</p>
+    <p class="subtitle" id="subtitle">A-Profile System Register Reference</p>
   </header>
 
   <main>
     <section class="inputs">
+      <div class="input-group" id="profile-group">
+        <label for="profile-select">Profile</label>
+        <select id="profile-select" aria-label="Architecture profile">
+          <option value="a-profile">A-Profile</option>
+          <option value="r-profile">R-Profile</option>
+        </select>
+      </div>
+
       <div class="input-group" id="reg-group">
         <label for="reg-input">Register</label>
         <div class="autocomplete-wrapper">
@@ -65,6 +73,8 @@
         </a>
       </div>
 
+      <p id="r-profile-note" class="r-profile-note" hidden></p>
+
       <div class="table-wrapper">
         <table id="fields-table">
           <thead>
@@ -82,7 +92,8 @@
 
     <p id="no-data-msg" class="notice" hidden>
       Register data not loaded. Run <code>scripts/parse_aarchmrs.py</code> to generate
-      <code>data/registers.json</code>, then serve this directory over HTTP.
+      <code>data/registers.json</code> (and <code>scripts/gen_r_profile.py</code> for R-Profile),
+      then serve this directory over HTTP.
     </p>
 
     <p id="loading-msg" class="notice">Loading register data…</p>

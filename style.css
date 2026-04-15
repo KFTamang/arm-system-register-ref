@@ -79,6 +79,24 @@ label {
   color: var(--text-dim);
 }
 
+select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  padding: 0.55rem 0.8rem;
+  outline: none;
+  transition: border-color 0.15s;
+  cursor: pointer;
+  min-width: 140px;
+}
+
+select:focus {
+  border-color: var(--accent);
+}
+
 input[type="text"] {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -194,9 +212,21 @@ input[type="text"]::placeholder {
   color: var(--text-dim);
 }
 
-.state-badge.aarch64 { background: rgba(91,141,238,0.18); color: var(--accent); }
-.state-badge.aarch32 { background: rgba(80,200,130,0.18); color: #50c882; }
-.state-badge.ext     { background: rgba(220,180,80,0.18);  color: #dca832; }
+.state-badge.aarch64    { background: rgba(91,141,238,0.18); color: var(--accent); }
+.state-badge.aarch32    { background: rgba(80,200,130,0.18); color: #50c882; }
+.state-badge.ext        { background: rgba(220,180,80,0.18);  color: #dca832; }
+.state-badge.r-new      { background: rgba(180,80,220,0.18);  color: #c06de0; }
+.state-badge.r-redefined{ background: rgba(220,140,60,0.18);  color: #e09a50; }
+
+.r-profile-note {
+  font-size: 0.82rem;
+  color: #e09a50;
+  background: rgba(220,140,60,0.10);
+  border: 1px solid rgba(220,140,60,0.25);
+  border-radius: var(--radius);
+  padding: 0.45rem 0.75rem;
+  margin-bottom: 1rem;
+}
 
 .arm-link {
   color: var(--accent);

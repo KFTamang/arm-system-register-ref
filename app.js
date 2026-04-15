@@ -5,49 +5,85 @@
 let registers = [];         // Full register list from JSON
 let nameIndex = {};         // name.toUpperCase() -> register object
 let currentReg = null;      // Currently selected register
+let selectedIdx = -1;       // Highlighted index in autocomplete dropdown
 
 // ── DOM refs ────────────────────────────────────────────────────────────────
 
-const regInput    = document.getElementById("reg-input");
-const dropdown    = document.getElementById("reg-dropdown");
-const valInput    = document.getElementById("val-input");
-const regInfo     = document.getElementById("reg-info");
-const regTitle    = document.getElementById("reg-title");
-const regBadge    = document.getElementById("reg-state-badge");
-const regDesc     = document.getElementById("reg-desc");
-const regLink     = document.getElementById("reg-link");
-const fieldsBody  = document.getElementById("fields-body");
-const loadingMsg  = document.getElementById("loading-msg");
-const noDataMsg   = document.getElementById("no-data-msg");
+const profileSelect = document.getElementById("profile-select");
+const subtitle      = document.getElementById("subtitle");
+const regInput      = document.getElementById("reg-input");
+const dropdown      = document.getElementById("reg-dropdown");
+const valInput      = document.getElementById("val-input");
+const regInfo       = document.getElementById("reg-info");
+const regTitle      = document.getElementById("reg-title");
+const regBadge      = document.getElementById("reg-state-badge");
+const regDesc       = document.getElementById("reg-desc");
+const regLink       = document.getElementById("reg-link");
+const rProfileNote  = document.getElementById("r-profile-note");
+const fieldsBody    = document.getElementById("fields-body");
+const loadingMsg    = document.getElementById("loading-msg");
+const noDataMsg     = document.getElementById("no-data-msg");
+
+// ── Profile config ───────────────────────────────────────────────────────────
+
+const PROFILES = {
+  "a-profile": {
+    label: "A-Profile System Register Reference",
+    url: "data/registers.json",
+  },
+  "r-profile": {
+    label: "R-Profile System Register Reference",
+    url: "data/registers_r_profile.json",
+  },
+};
 
 // ── Load data ────────────────────────────────────────────────────────────────
 
-fetch("data/registers.json")
-  .then(r => {
-    if (!r.ok) throw new Error(`HTTP ${r.status}`);
-    return r.json();
-  })
-  .then(data => {
-    registers = data;
-    nameIndex = {};
-    for (const reg of registers) {
-      nameIndex[reg.name.toUpperCase()] = reg;
-    }
-    console.log(`[ASRF] Loaded ${registers.length} registers`);
-    loadingMsg.hidden = true;
-    regInput.disabled = false;
-    valInput.disabled = false;
-    regInput.focus();
-  })
-  .catch(err => {
-    console.error("[ASRF] Failed to load registers.json:", err);
-    loadingMsg.hidden = true;
-    noDataMsg.hidden = false;
-  });
+function loadProfile(profileKey) {
+  const profile = PROFILES[profileKey];
+  if (!profile) return;
+
+  subtitle.textContent = profile.label;
+  regInput.disabled = true;
+  valInput.disabled = true;
+  regInfo.hidden = true;
+  noDataMsg.hidden = true;
+  loadingMsg.hidden = false;
+  regInput.value = "";
+  currentReg = null;
+  hideDropdown();
+
+  fetch(profile.url)
+    .then(r => {
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return r.json();
+    })
+    .then(data => {
+      registers = data;
+      nameIndex = {};
+      for (const reg of registers) {
+        nameIndex[reg.name.toUpperCase()] = reg;
+      }
+      console.log(`[ASRF] Loaded ${registers.length} registers (${profileKey})`);
+      loadingMsg.hidden = true;
+      regInput.disabled = false;
+      valInput.disabled = false;
+      regInput.focus();
+    })
+    .catch(err => {
+      console.error(`[ASRF] Failed to load ${profile.url}:`, err);
+      loadingMsg.hidden = true;
+      noDataMsg.hidden = false;
+    });
+}
+
+profileSelect.addEventListener("change", () => {
+  loadProfile(profileSelect.value);
+});
+
+loadProfile(profileSelect.value);
 
 // ── Autocomplete ─────────────────────────────────────────────────────────────
-
-let selectedIdx = -1;
 
 function showSuggestions(query) {
   const q = query.trim().toUpperCase();
@@ -83,7 +119,9 @@ function showSuggestions(query) {
     longSpan.className = "long-name";
     const stateLabel = { AArch64: "AArch64", AArch32: "AArch32", ext: "Ext" };
     const stateTag = reg.state ? `[${stateLabel[reg.state] || reg.state}]` : "";
-    longSpan.textContent = [stateTag, reg.long_name].filter(Boolean).join(" ");
+    const rTag = reg.r_profile_status && reg.r_profile_status !== "Unchanged"
+      ? `[${reg.r_profile_status}]` : "";
+    longSpan.textContent = [stateTag, rTag, reg.long_name].filter(Boolean).join(" ");
 
     li.appendChild(nameSpan);
     if (longSpan.textContent) li.appendChild(longSpan);
@@ -164,12 +202,27 @@ function selectRegister(name) {
 
   const stateLabel = { AArch64: "AArch64", AArch32: "AArch32", ext: "External" };
   const stateClass = { AArch64: "aarch64", AArch32: "aarch32", ext: "ext" };
-  regBadge.textContent = stateLabel[reg.state] || reg.state || "";
-  regBadge.className = "state-badge " + (stateClass[reg.state] || "");
-  regBadge.hidden = !reg.state;
+  const rClass = { Unchanged: "r-unchanged", Redefined: "r-redefined", New: "r-new" };
+
+  let badgeText = stateLabel[reg.state] || reg.state || "";
+  let badgeClass = "state-badge " + (stateClass[reg.state] || "");
+  if (reg.r_profile_status) {
+    badgeText += (badgeText ? "  ·  " : "") + reg.r_profile_status;
+    badgeClass += " " + (rClass[reg.r_profile_status] || "");
+  }
+  regBadge.textContent = badgeText;
+  regBadge.className = badgeClass;
+  regBadge.hidden = !badgeText;
 
   regDesc.textContent = reg.description || "";
   regDesc.hidden = !reg.description;
+
+  if (reg.r_profile_note) {
+    rProfileNote.textContent = reg.r_profile_note;
+    rProfileNote.hidden = false;
+  } else {
+    rProfileNote.hidden = true;
+  }
 
   regLink.href = reg.arm_url;
   regInfo.hidden = false;
