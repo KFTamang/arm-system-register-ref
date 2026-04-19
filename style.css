@@ -66,9 +66,9 @@ main {
   gap: 0.4rem;
 }
 
-.input-group:first-child {
+#reg-group {
   flex: 1;
-  min-width: 260px;
+  min-width: 200px;
 }
 
 label {
