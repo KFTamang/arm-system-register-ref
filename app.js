@@ -19,7 +19,8 @@ const regTitle      = document.getElementById("reg-title");
 const regBadge      = document.getElementById("reg-state-badge");
 const regDesc       = document.getElementById("reg-desc");
 const regLink       = document.getElementById("reg-link");
-const rProfileNote  = document.getElementById("r-profile-note");
+const rProfileNote        = document.getElementById("r-profile-note");
+const rProfileDisclaimer  = document.getElementById("r-profile-disclaimer");
 const fieldsBody    = document.getElementById("fields-body");
 const loadingMsg    = document.getElementById("loading-msg");
 const noDataMsg     = document.getElementById("no-data-msg");
@@ -44,6 +45,7 @@ function loadProfile(profileKey) {
   if (!profile) return;
 
   subtitle.textContent = profile.label;
+  rProfileDisclaimer.hidden = (profileKey !== "r-profile");
   regInput.disabled = true;
   valInput.disabled = true;
   regInfo.hidden = true;
