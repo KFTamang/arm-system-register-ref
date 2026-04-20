@@ -29,8 +29,30 @@ body {
 }
 
 header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 2rem 2rem 1rem;
   border-bottom: 1px solid var(--border);
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.4em 0.75em;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.github-link:hover {
+  color: var(--text);
+  border-color: var(--text-dim);
 }
 
 header h1 {
