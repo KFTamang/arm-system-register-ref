@@ -25,6 +25,19 @@ const fieldsBody    = document.getElementById("fields-body");
 const loadingMsg    = document.getElementById("loading-msg");
 const noDataMsg     = document.getElementById("no-data-msg");
 
+// ── URL state ────────────────────────────────────────────────────────────────
+
+function updateURL() {
+  const params = new URLSearchParams();
+  const profile = profileSelect.value;
+  if (profile && profile !== "a-profile") params.set("profile", profile);
+  if (currentReg) params.set("reg", currentReg.name);
+  const val = valInput.value.trim();
+  if (val) params.set("val", val);
+  const qs = params.toString();
+  history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
+}
+
 // ── Profile config ───────────────────────────────────────────────────────────
 
 const PROFILES = {
@@ -101,7 +114,17 @@ function loadProfile(profileKey) {
       loadingMsg.hidden = true;
       regInput.disabled = false;
       valInput.disabled = false;
-      regInput.focus();
+
+      // Restore state from URL on initial load
+      const params = new URLSearchParams(location.search);
+      const urlReg = params.get("reg");
+      const urlVal = params.get("val");
+      if (urlReg && nameIndex[urlReg.toUpperCase()]) {
+        if (urlVal) valInput.value = urlVal;
+        selectRegister(urlReg);
+      } else {
+        regInput.focus();
+      }
     })
     .catch(err => {
       console.error(`[ASRF] Failed to load ${profile.url}:`, err);
@@ -111,8 +134,14 @@ function loadProfile(profileKey) {
 }
 
 profileSelect.addEventListener("change", () => {
+  updateURL();
   loadProfile(profileSelect.value);
 });
+
+// Restore profile from URL before first load
+const _initParams = new URLSearchParams(location.search);
+const _initProfile = _initParams.get("profile");
+if (_initProfile && PROFILES[_initProfile]) profileSelect.value = _initProfile;
 
 loadProfile(profileSelect.value);
 
@@ -261,6 +290,7 @@ function selectRegister(name) {
   regInfo.hidden = false;
 
   decodeAndRender();
+  updateURL();
 }
 
 // ── Value parsing ─────────────────────────────────────────────────────────────
@@ -392,6 +422,7 @@ function truncate(str, maxLen) {
 valInput.addEventListener("input", () => {
   console.log(`[ASRF] valInput input event: "${valInput.value}", currentReg=${currentReg?.name ?? "null"}`);
   decodeAndRender();
+  updateURL();
 });
 
 // Pre-fill placeholder with zeros on focus if empty
