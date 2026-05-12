@@ -397,24 +397,19 @@ function decodeAndRender() {
       } else if (field.description) {
         const descDiv = document.createElement("div");
         descDiv.className = "desc";
-        descDiv.textContent = truncate(field.description, 120);
+        descDiv.textContent = field.description;
         tdMeaning.appendChild(descDiv);
       }
     } else if (field.description) {
       const descDiv = document.createElement("div");
       descDiv.className = "desc";
-      descDiv.textContent = truncate(field.description, 120);
+      descDiv.textContent = field.description;
       tdMeaning.appendChild(descDiv);
     }
 
     tr.appendChild(tdMeaning);
     fieldsBody.appendChild(tr);
   }
-}
-
-function truncate(str, maxLen) {
-  if (!str || str.length <= maxLen) return str;
-  return str.slice(0, maxLen).trimEnd() + "…";
 }
 
 // ── Value input ───────────────────────────────────────────────────────────────
