@@ -364,6 +364,28 @@ td.meaning .desc {
   color: var(--text-dim);
 }
 
+td.meaning .condition {
+  font-size: 0.78rem;
+  margin-top: 0.2rem;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+/* ── EC-dependent sub-field rows (e.g. ESR_ELx.ISS) ── */
+
+tr.sub-field {
+  background: rgba(91, 141, 238, 0.04);
+}
+
+tr.sub-field td.field-name {
+  padding-left: 1.85rem;
+}
+
+tr.sub-field td.field-name::before {
+  content: "└ ";
+  color: var(--res);
+}
+
 /* ── Reserved row styling ────────────────────── */
 
 tr.is-reserved td.field-name {

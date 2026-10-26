@@ -330,6 +330,106 @@ function fmtBin(val, width) {
 
 // ── Render ────────────────────────────────────────────────────────────────────
 
+function findEnum(field, bits) {
+  if (!field.values) return null;
+  const width = field.msb - field.lsb + 1;
+  return field.values.find(v =>
+    v.val !== null ? BigInt(v.val) === bits
+    : v.pattern ? [...fmtBin(bits, width)].every((c, i) => v.pattern[i] === "x" || v.pattern[i] === c)
+    : false
+  ) || null;
+}
+
+function appendText(parent, className, text) {
+  const div = document.createElement("div");
+  div.className = className;
+  div.textContent = text;
+  parent.appendChild(div);
+}
+
+// Instance ids of dynamic fields selected by the current value,
+// e.g. ESR_ELx.EC = 0b100100 → { ISS: "an_exception_from_a_Data_Abort", ISS2: ... }
+function selectInstances(reg, value) {
+  const selected = {};
+  if (value === null) return selected;
+  for (const field of reg.fields) {
+    if (!field.links) continue;
+    const links = field.links[extractBits(value, field.msb, field.lsb).toString()];
+    if (links) Object.assign(selected, links);
+  }
+  return selected;
+}
+
+function buildRow(field, value, isSub, instance) {
+  const tr = document.createElement("tr");
+  const width = field.msb - field.lsb + 1;
+
+  if (field.reserved) tr.classList.add("is-reserved");
+  if (isSub) tr.classList.add("sub-field");
+
+  // Bits column
+  const tdBits = document.createElement("td");
+  tdBits.className = "bits";
+  tdBits.textContent = field.msb === field.lsb ? String(field.msb) : `${field.msb}:${field.lsb}`;
+  tr.appendChild(tdBits);
+
+  // Field name column
+  const tdName = document.createElement("td");
+  tdName.className = "field-name";
+  const nameSpan = document.createElement("span");
+  nameSpan.textContent = field.name;
+  if (field.rwtype && field.reserved) nameSpan.title = field.rwtype;
+  tdName.appendChild(nameSpan);
+  tr.appendChild(tdName);
+
+  // Value column
+  const tdVal = document.createElement("td");
+  tdVal.className = "field-val";
+  const bits = value !== null ? extractBits(value, field.msb, field.lsb) : null;
+  if (bits !== null) {
+    const hexSpan = document.createElement("span");
+    hexSpan.className = "hex";
+    hexSpan.textContent = width <= 4 ? bits.toString(10) : fmtHex(bits, width);
+    tdVal.appendChild(hexSpan);
+    if (width > 1) {
+      const binSpan = document.createElement("span");
+      binSpan.className = "bin";
+      binSpan.textContent = ` (${fmtBin(bits, width)})`;
+      tdVal.appendChild(binSpan);
+    }
+  } else {
+    tdVal.textContent = "—";
+  }
+  tr.appendChild(tdVal);
+
+  // Meaning column
+  const tdMeaning = document.createElement("td");
+  tdMeaning.className = "meaning";
+
+  const match = bits !== null ? findEnum(field, bits) : null;
+  if (field.instances && bits !== null) {
+    if (instance) {
+      const enumSpan = document.createElement("span");
+      enumSpan.className = "enum-match";
+      enumSpan.textContent = `${field.name} encoding for ${instance.display}`;
+      tdMeaning.appendChild(enumSpan);
+    } else {
+      appendText(tdMeaning, "desc", `No ${field.name} encoding is defined for this value.`);
+    }
+  } else if (match && match.label) {
+    const enumSpan = document.createElement("span");
+    enumSpan.className = "enum-match";
+    enumSpan.textContent = match.label;
+    tdMeaning.appendChild(enumSpan);
+  } else if (field.description) {
+    appendText(tdMeaning, "desc", field.description);
+  }
+  if (field.condition) appendText(tdMeaning, "condition", `When ${field.condition}`);
+
+  tr.appendChild(tdMeaning);
+  return tr;
+}
+
 function decodeAndRender() {
   if (!currentReg) {
     console.log("[ASRF] decodeAndRender: no register selected, skipping");
@@ -341,74 +441,16 @@ function decodeAndRender() {
   console.log(`[ASRF] decodeAndRender: reg=${currentReg.name}, fields=${currentReg.fields.length}, value=${value}`);
 
   fieldsBody.innerHTML = "";
+  const selected = selectInstances(currentReg, value);
 
   for (const field of currentReg.fields) {
-    const tr = document.createElement("tr");
-    const width = field.msb - field.lsb + 1;
-
-    if (field.reserved) tr.classList.add("is-reserved");
-
-    // Bits column
-    const tdBits = document.createElement("td");
-    tdBits.className = "bits";
-    tdBits.textContent = field.msb === field.lsb ? String(field.msb) : `${field.msb}:${field.lsb}`;
-    tr.appendChild(tdBits);
-
-    // Field name column
-    const tdName = document.createElement("td");
-    tdName.className = "field-name";
-    if (field.rwtype && field.reserved) {
-      tdName.innerHTML = `<span title="${field.rwtype}">${field.name}</span>`;
-    } else {
-      tdName.textContent = field.name;
-    }
-    tr.appendChild(tdName);
-
-    // Value column
-    const tdVal = document.createElement("td");
-    tdVal.className = "field-val";
-    if (value !== null) {
-      const bits = extractBits(value, field.msb, field.lsb);
-      const hexSpan = document.createElement("span");
-      hexSpan.className = "hex";
-      hexSpan.textContent = width <= 4 ? bits.toString(10) : fmtHex(bits, width);
-      const binSpan = document.createElement("span");
-      binSpan.className = "bin";
-      binSpan.textContent = width > 1 ? ` (${fmtBin(bits, width)})` : "";
-      tdVal.appendChild(hexSpan);
-      if (width > 1) tdVal.appendChild(binSpan);
-    } else {
-      tdVal.textContent = "—";
-    }
-    tr.appendChild(tdVal);
-
-    // Meaning column
-    const tdMeaning = document.createElement("td");
-    tdMeaning.className = "meaning";
-
-    if (value !== null && field.values && field.values.length > 0) {
-      const bits = extractBits(value, field.msb, field.lsb);
-      const match = field.values.find(v => v.val !== null && BigInt(v.val) === bits);
-      if (match) {
-        const enumSpan = document.createElement("span");
-        enumSpan.className = "enum-match";
-        enumSpan.textContent = match.label;
-        tdMeaning.appendChild(enumSpan);
-      } else if (field.description) {
-        const descDiv = document.createElement("div");
-        descDiv.className = "desc";
-        descDiv.textContent = field.description;
-        tdMeaning.appendChild(descDiv);
+    const instance = field.instances && field.instances[selected[field.name]];
+    fieldsBody.appendChild(buildRow(field, value, false, instance));
+    if (instance) {
+      for (const sub of instance.fields) {
+        fieldsBody.appendChild(buildRow(sub, value, true, null));
       }
-    } else if (field.description) {
-      const descDiv = document.createElement("div");
-      descDiv.className = "desc";
-      descDiv.textContent = field.description;
-      tdMeaning.appendChild(descDiv);
     }
-
-    tr.appendChild(tdMeaning);
-    fieldsBody.appendChild(tr);
   }
 }
 

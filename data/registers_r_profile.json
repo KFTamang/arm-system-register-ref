@@ -4,7 +4,7 @@
     "long_name": "Auxiliary Control Register",
     "description": "Provides IMPLEMENTATION DEFINED configuration and control options for execution at EL1 and EL0.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/ACTLR--Auxiliary-Control-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/ACTLR--Auxiliary-Control-Register",
     "fields": [
       {
         "name": "IMPLEMENTATION DEFINED",
@@ -23,7 +23,7 @@
     "long_name": "Auxiliary Control Register 2",
     "description": "Provides additional space to the ACTLR register to hold IMPLEMENTATION DEFINED trap functionality for execution at EL1 and EL0.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/ACTLR2--Auxiliary-Control-Register-2",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/ACTLR2--Auxiliary-Control-Register-2",
     "fields": [
       {
         "name": "IMPLEMENTATION DEFINED",
@@ -42,7 +42,7 @@
     "long_name": "Auxiliary Data Fault Status Register",
     "description": "Provides additional IMPLEMENTATION DEFINED fault status information for Data Abort exceptions taken to EL1 modes, and EL3 modes when EL3 is implemented and is using AArch32.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/ADFSR--Auxiliary-Data-Fault-Status-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/ADFSR--Auxiliary-Data-Fault-Status-Register",
     "fields": [
       {
         "name": "IMPLEMENTATION DEFINED",
@@ -61,7 +61,7 @@
     "long_name": "Auxiliary ID Register",
     "description": "Provides IMPLEMENTATION DEFINED identification information. The value of this register must be used in conjunction with the value of MIDR .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/AIDR--Auxiliary-ID-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/AIDR--Auxiliary-ID-Register",
     "fields": [
       {
         "name": "IMPLEMENTATION DEFINED",
@@ -80,7 +80,7 @@
     "long_name": "Auxiliary Instruction Fault Status Register",
     "description": "Provides additional IMPLEMENTATION DEFINED fault status information for Prefetch Abort exceptions taken to EL1 modes, and EL3 modes when EL3 is implemented and is using AArch32.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/AIFSR--Auxiliary-Instruction-Fault-Status-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/AIFSR--Auxiliary-Instruction-Fault-Status-Register",
     "fields": [
       {
         "name": "IMPLEMENTATION DEFINED",
@@ -99,7 +99,7 @@
     "long_name": "Auxiliary Memory Attribute Indirection Register 0",
     "description": "When using the Long-descriptor format translation tables for stage 1 translations, provides IMPLEMENTATION DEFINED memory attributes for the memory regions specified by MAIR0 .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/AMAIR0--Auxiliary-Memory-Attribute-Indirection-Register-0",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/AMAIR0--Auxiliary-Memory-Attribute-Indirection-Register-0",
     "fields": [
       {
         "name": "IMPLEMENTATION DEFINED",
@@ -118,7 +118,7 @@
     "long_name": "Auxiliary Memory Attribute Indirection Register 1",
     "description": "When using the Long-descriptor format translation tables for stage 1 translations, provides IMPLEMENTATION DEFINED memory attributes for the memory regions specified by MAIR1 .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/AMAIR1--Auxiliary-Memory-Attribute-Indirection-Register-1",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/AMAIR1--Auxiliary-Memory-Attribute-Indirection-Register-1",
     "fields": [
       {
         "name": "IMPLEMENTATION DEFINED",
@@ -137,7 +137,7 @@
     "long_name": "Current Cache Size ID Register",
     "description": "Provides information about the architecture of the currently selected cache. When FEAT_CCIDX is implemented, this register is used in conjunction with CCSIDR2 .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CCSIDR--Current-Cache-Size-ID-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CCSIDR--Current-Cache-Size-ID-Register",
     "fields": [
       {
         "name": "RES0",
@@ -174,7 +174,7 @@
     "long_name": "Cache Level ID Register",
     "description": "Identifies the type of cache, or caches, that are implemented at each level and can be managed using the architected cache maintenance instructions that operate by set/way, up to a maximum of seven levels. Also identifies the Level of Coherence (LoC) and Level of Unification (LoU) for the cache hierarchy.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CLIDR--Cache-Level-ID-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CLIDR--Cache-Level-ID-Register",
     "fields": [
       {
         "name": "ICB",
@@ -267,7 +267,7 @@
     "long_name": "Counter-timer Frequency register",
     "description": "This register is provided so that software can discover the effective frequency of the system counter. It must be programmed with this value as part of system initialization. The value of the register is not interpreted by hardware.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CNTFRQ--Counter-timer-Frequency-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CNTFRQ--Counter-timer-Frequency-register",
     "fields": [
       {
         "name": "ClockFreq",
@@ -286,7 +286,7 @@
     "long_name": "Counter-timer Hyp Control register",
     "description": "Controls the generation of an event stream from the physical counter, and access from Non-secure EL1 modes to the physical counter and the Non-secure EL1 physical timer.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CNTHCTL--Counter-timer-Hyp-Control-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CNTHCTL--Counter-timer-Hyp-Control-register",
     "fields": [
       {
         "name": "RES0",
@@ -422,7 +422,7 @@
     "long_name": "Counter-timer Hyp Physical Timer Control register",
     "description": "Control register for the Hyp mode physical timer.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CNTHP-CTL--Counter-timer-Hyp-Physical-Timer-Control-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CNTHP-CTL--Counter-timer-Hyp-Physical-Timer-Control-register",
     "fields": [
       {
         "name": "RES0",
@@ -495,7 +495,7 @@
     "long_name": "Counter-timer Hyp Physical CompareValue register",
     "description": "Holds the compare value for the Hyp mode physical timer.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CNTHP-CVAL--Counter-timer-Hyp-Physical-CompareValue-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CNTHP-CVAL--Counter-timer-Hyp-Physical-CompareValue-register",
     "fields": [
       {
         "name": "CompareValue",
@@ -514,7 +514,7 @@
     "long_name": "Counter-timer Hyp Physical Timer TimerValue register",
     "description": "Holds the timer value for the Hyp mode physical timer.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CNTHP-TVAL--Counter-timer-Hyp-Physical-Timer-TimerValue-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CNTHP-TVAL--Counter-timer-Hyp-Physical-Timer-TimerValue-register",
     "fields": [
       {
         "name": "TimerValue",
@@ -533,7 +533,7 @@
     "long_name": "Counter-timer Kernel Control register",
     "description": "Controls the generation of an event stream from the virtual counter, and access from EL0 modes to the physical counter, virtual counter, EL1 physical timers, and the virtual timer.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CNTKCTL--Counter-timer-Kernel-Control-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CNTKCTL--Counter-timer-Kernel-Control-register",
     "fields": [
       {
         "name": "RES0",
@@ -705,7 +705,7 @@
     "long_name": "Counter-timer Physical Count register",
     "description": "Holds the 64-bit physical count value.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CNTPCT--Counter-timer-Physical-Count-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CNTPCT--Counter-timer-Physical-Count-register",
     "fields": [
       {
         "name": "PhysicalCount",
@@ -724,7 +724,7 @@
     "long_name": "Counter-timer Physical Timer Control register",
     "description": "Control register for the EL1 physical timer.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CNTP-CTL--Counter-timer-Physical-Timer-Control-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CNTP-CTL--Counter-timer-Physical-Timer-Control-register",
     "fields": [
       {
         "name": "RES0",
@@ -797,7 +797,7 @@
     "long_name": "Counter-timer Physical Timer CompareValue register",
     "description": "Holds the compare value for the EL1 physical timer.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CNTP-CVAL--Counter-timer-Physical-Timer-CompareValue-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CNTP-CVAL--Counter-timer-Physical-Timer-CompareValue-register",
     "fields": [
       {
         "name": "CompareValue",
@@ -816,7 +816,7 @@
     "long_name": "Counter-timer Physical Timer TimerValue register",
     "description": "Holds the timer value for the EL1 physical timer.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CNTP-TVAL--Counter-timer-Physical-Timer-TimerValue-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CNTP-TVAL--Counter-timer-Physical-Timer-TimerValue-register",
     "fields": [
       {
         "name": "TimerValue",
@@ -835,7 +835,7 @@
     "long_name": "Counter-timer Virtual Count register",
     "description": "Holds the 64-bit virtual count value. The virtual count value is equal to the physical count value minus the virtual offset visible in CNTVOFF .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CNTVCT--Counter-timer-Virtual-Count-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CNTVCT--Counter-timer-Virtual-Count-register",
     "fields": [
       {
         "name": "VirtualCount",
@@ -854,7 +854,7 @@
     "long_name": "Counter-timer Virtual Offset register",
     "description": "Holds the 64-bit virtual offset. This is the offset between the physical count value visible in CNTPCT and the virtual count value visible in CNTVCT .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CNTVOFF--Counter-timer-Virtual-Offset-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CNTVOFF--Counter-timer-Virtual-Offset-register",
     "fields": [
       {
         "name": "VOffset",
@@ -873,7 +873,7 @@
     "long_name": "Counter-timer Virtual Timer Control register",
     "description": "Control register for the virtual timer.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CNTV-CTL--Counter-timer-Virtual-Timer-Control-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CNTV-CTL--Counter-timer-Virtual-Timer-Control-register",
     "fields": [
       {
         "name": "RES0",
@@ -946,7 +946,7 @@
     "long_name": "Counter-timer Virtual Timer CompareValue register",
     "description": "Holds the compare value for the virtual timer.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CNTV-CVAL--Counter-timer-Virtual-Timer-CompareValue-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CNTV-CVAL--Counter-timer-Virtual-Timer-CompareValue-register",
     "fields": [
       {
         "name": "CompareValue",
@@ -965,7 +965,7 @@
     "long_name": "Counter-timer Virtual Timer TimerValue register",
     "description": "Holds the timer value for the virtual timer.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CNTV-TVAL--Counter-timer-Virtual-Timer-TimerValue-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CNTV-TVAL--Counter-timer-Virtual-Timer-TimerValue-register",
     "fields": [
       {
         "name": "TimerValue",
@@ -984,7 +984,7 @@
     "long_name": "Context ID Register",
     "description": "Identifies the current Process Identifier and, when using the Short-descriptor translation table format, the Address Space Identifier. The value of the whole of this register is called the Context ID and is used by: The debug logic, for Linked and Unlinked Context ID matching. The trace logic, to identify the current process. The significance of this register is for debug and trace use only.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CONTEXTIDR--Context-ID-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CONTEXTIDR--Context-ID-Register",
     "fields": [
       {
         "name": "PROCID",
@@ -1012,7 +1012,7 @@
     "long_name": "Architectural Feature Access Control Register",
     "description": "Controls access to trace, and to Advanced SIMD and floating-point functionality from EL0, EL1, and EL3. In an implementation that includes EL2, the CPACR has no effect on instructions executed at EL2.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CPACR--Architectural-Feature-Access-Control-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CPACR--Architectural-Feature-Access-Control-Register",
     "fields": [
       {
         "name": "ASEDIS",
@@ -1120,7 +1120,7 @@
     "long_name": "Cache Size Selection Register",
     "description": "Selects the current Cache Size ID Register, CCSIDR , by specifying the required cache level and the cache type, which is either instruction cache or data cache. If FEAT_CCIDX is implemented, CSSELR also selects the current CCSIDR2 .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CSSELR--Cache-Size-Selection-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CSSELR--Cache-Size-Selection-Register",
     "fields": [
       {
         "name": "RES0",
@@ -1195,7 +1195,7 @@
     "long_name": "Cache Type Register",
     "description": "Provides information about the architecture of the caches.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/CTR--Cache-Type-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/CTR--Cache-Type-Register",
     "fields": [
       {
         "name": "RES1",
@@ -1330,7 +1330,7 @@
     "long_name": "Debug Breakpoint Control Registers",
     "description": "Holds control information for a breakpoint.\nForms breakpoint n together with value register DBGBVR<n> .\nIf EL2 is implemented and this breakpoint supports Context matching, DBGBVR<n> can be associated with a Breakpoint Extended Value\nRegister DBGBXVR<n> for VMID matching.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGBCR-n--Debug-Breakpoint-Control-Registers",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGBCR-n---Debug-Breakpoint-Control-Registers",
     "fields": [
       {
         "name": "RES0",
@@ -1504,7 +1504,7 @@
     "long_name": "Debug Breakpoint Value Registers",
     "description": "Holds a value for use in breakpoint matching, either the virtual address of an instruction or a context ID. Forms breakpoint n together with control register DBGBCR<n> . If EL2 is implemented and this breakpoint supports Context matching, DBGBVR<n> can be associated with a Breakpoint Extended Value Register DBGBXVR<n> for VMID matching.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGBVR-n--Debug-Breakpoint-Value-Registers",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGBVR-n---Debug-Breakpoint-Value-Registers",
     "fields": [
       {
         "name": "VA[31:2]",
@@ -1532,7 +1532,7 @@
     "long_name": "Debug Breakpoint Extended Value Registers",
     "description": "Holds a value for use in breakpoint matching, to support VMID matching. Used in conjunction with a control register DBGBCR<n> and a value register DBGBVR<n> , where EL2 is implemented and breakpoint n supports Context matching.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGBXVR-n--Debug-Breakpoint-Extended-Value-Registers",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGBXVR-n---Debug-Breakpoint-Extended-Value-Registers",
     "fields": [
       {
         "name": "RES0",
@@ -1578,7 +1578,7 @@
     "long_name": "Debug CLAIM Tag Clear register",
     "description": "Used by software to read the values of the CLAIM tag bits, and to clear CLAIM tag bits to 0. The architecture does not define any functionality for the CLAIM tag bits. CLAIM tags are typically used for communication between the debugger and target software. Used in conjunction with the DBGCLAIMSET register.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGCLAIMCLR--Debug-CLAIM-Tag-Clear-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGCLAIMCLR--Debug-CLAIM-Tag-Clear-register",
     "fields": [
       {
         "name": "RAZ/WI",
@@ -1615,7 +1615,7 @@
     "long_name": "Debug CLAIM Tag Set register",
     "description": "Used by software to set the CLAIM tag bits to 1. The architecture does not define any functionality for the CLAIM tag bits. CLAIM tags are typically used for communication between the debugger and target software. Used in conjunction with the DBGCLAIMCLR register.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGCLAIMSET--Debug-CLAIM-Tag-Set-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGCLAIMSET--Debug-CLAIM-Tag-Set-register",
     "fields": [
       {
         "name": "RAZ/WI",
@@ -1652,7 +1652,7 @@
     "long_name": "DCC Interrupt Enable Register",
     "description": "Enables interrupt requests to be signaled based on the DCC status flags.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGDCCINT--DCC-Interrupt-Enable-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGDCCINT--DCC-Interrupt-Enable-Register",
     "fields": [
       {
         "name": "RES0",
@@ -1716,7 +1716,7 @@
     "long_name": "Debug Device ID register 0",
     "description": "Adds to the information given by the DBGDIDR by describing other features of the debug implementation.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGDEVID--Debug-Device-ID-register-0",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGDEVID--Debug-Device-ID-register-0",
     "fields": [
       {
         "name": "CIDMask",
@@ -1882,7 +1882,7 @@
     "long_name": "Debug Device ID register 1",
     "description": "Adds to the information given by the DBGDIDR by describing other features of the debug implementation.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGDEVID1--Debug-Device-ID-register-1",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGDEVID1--Debug-Device-ID-register-1",
     "fields": [
       {
         "name": "RES0",
@@ -1919,7 +1919,7 @@
     "long_name": "Debug Device ID register 2",
     "description": "Reserved for future descriptions of features of the debug implementation.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGDEVID2--Debug-Device-ID-register-2",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGDEVID2--Debug-Device-ID-register-2",
     "fields": [
       {
         "name": "RES0",
@@ -1938,7 +1938,7 @@
     "long_name": "Debug ID Register",
     "description": "Specifies which version of the Debug architecture is implemented, and some features of the debug implementation.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGDIDR--Debug-ID-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGDIDR--Debug-ID-Register",
     "fields": [
       {
         "name": "WRPs",
@@ -2102,7 +2102,7 @@
     "long_name": "Debug ROM Address Register",
     "description": "Defines the base physical address of a 4KB-aligned memory-mapped debug component, usually a ROM table that locates and describes the memory-mapped debug components in the system. Use of this register is deprecated.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGDRAR--Debug-ROM-Address-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGDRAR--Debug-ROM-Address-Register",
     "fields": [
       {
         "name": "RES0",
@@ -2157,7 +2157,7 @@
     "long_name": "Debug Self Address Register",
     "description": "In earlier versions of the Arm Architecture, this register defines the offset from the base address defined in DBGDRAR of the physical base address of the debug registers for the PE. Use of this register is deprecated.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGDSAR--Debug-Self-Address-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGDSAR--Debug-Self-Address-Register",
     "fields": [
       {
         "name": "RES0",
@@ -2185,7 +2185,7 @@
     "long_name": "Debug Status and Control Register, Internal View",
     "description": "Main control register for the debug implementation. This is an internal, read-only view.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGDSCRint--Debug-Status-and-Control-Register--Internal-View",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGDSCRint--Debug-Status-and-Control-Register--Internal-View",
     "fields": [
       {
         "name": "RES0",
@@ -2329,7 +2329,7 @@
     "long_name": "Debug OS Lock Data Transfer Register, Receive, External View",
     "description": "Used for save/restore of DBGDTRRXint . It is a component of the Debug Communications Channel.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGDTRRXext--Debug-OS-Lock-Data-Transfer-Register--Receive--External-View",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGDTRRXext--Debug-OS-Lock-Data-Transfer-Register--Receive--External-View",
     "fields": [
       {
         "name": "DTRRX",
@@ -2348,7 +2348,7 @@
     "long_name": "Debug Data Transfer Register, Receive",
     "description": "Transfers data from an external debugger to the PE. For example, it is used by a debugger transferring commands and data to a debug target. See DBGDTR_EL0 for additional architectural mappings. It is a component of the Debug Communications Channel.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGDTRRXint--Debug-Data-Transfer-Register--Receive",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGDTRRXint--Debug-Data-Transfer-Register--Receive",
     "fields": [
       {
         "name": "DTRRX",
@@ -2367,7 +2367,7 @@
     "long_name": "Debug OS Lock Data Transfer Register, Transmit",
     "description": "Used for save/restore of DBGDTRTXint . It is a component of the Debug Communication Channel.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGDTRTXext--Debug-OS-Lock-Data-Transfer-Register--Transmit",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGDTRTXext--Debug-OS-Lock-Data-Transfer-Register--Transmit",
     "fields": [
       {
         "name": "DTRTX",
@@ -2386,7 +2386,7 @@
     "long_name": "Debug Data Transfer Register, Transmit",
     "description": "Transfers data from the PE to an external debugger. For example, it is used by a debug target to transfer data to the debugger. See DBGDTR_EL0 for additional architectural mappings. It is a component of the Debug Communication Channel.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGDTRTXint--Debug-Data-Transfer-Register--Transmit",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGDTRTXint--Debug-Data-Transfer-Register--Transmit",
     "fields": [
       {
         "name": "DTRTX",
@@ -2405,7 +2405,7 @@
     "long_name": "Debug OS Double Lock Register",
     "description": "Locks out the external debug interface.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGOSDLR--Debug-OS-Double-Lock-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGOSDLR--Debug-OS-Double-Lock-Register",
     "fields": [
       {
         "name": "RES0",
@@ -2451,7 +2451,7 @@
     "long_name": "Debug OS Lock Exception Catch Control Register",
     "description": "Provides a mechanism for an operating system to access the contents of EDECCR that are otherwise invisible to software, so it can save/restore the contents of EDECCR over powerdown on behalf of the external debugger.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGOSECCR--Debug-OS-Lock-Exception-Catch-Control-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGOSECCR--Debug-OS-Lock-Exception-Catch-Control-Register",
     "fields": [
       {
         "name": "EDECCR",
@@ -2470,7 +2470,7 @@
     "long_name": "Debug OS Lock Access Register",
     "description": "Provides a lock for the debug registers. The OS Lock also disables some debug exceptions and debug events.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGOSLAR--Debug-OS-Lock-Access-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGOSLAR--Debug-OS-Lock-Access-Register",
     "fields": [
       {
         "name": "OSLA",
@@ -2489,7 +2489,7 @@
     "long_name": "Debug OS Lock Status Register",
     "description": "Provides status information for the OS Lock.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGOSLSR--Debug-OS-Lock-Status-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGOSLSR--Debug-OS-Lock-Status-Register",
     "fields": [
       {
         "name": "RES0",
@@ -2562,7 +2562,7 @@
     "long_name": "Debug Power Control Register",
     "description": "Controls behavior of the PE on powerdown request.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGPRCR--Debug-Power-Control-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGPRCR--Debug-Power-Control-Register",
     "fields": [
       {
         "name": "RES0",
@@ -2617,7 +2617,7 @@
     "long_name": "Debug Vector Catch Register",
     "description": "Controls Vector Catch debug events.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGVCR--Debug-Vector-Catch-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGVCR--Debug-Vector-Catch-Register",
     "fields": [
       {
         "name": "NSF",
@@ -2834,7 +2834,7 @@
     "long_name": "Debug Watchpoint Control Registers",
     "description": "Holds control information for a watchpoint. Forms watchpoint n together with value register DBGWVR<n> .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGWCR-n--Debug-Watchpoint-Control-Registers",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGWCR-n---Debug-Watchpoint-Control-Registers",
     "fields": [
       {
         "name": "RES0",
@@ -2983,7 +2983,7 @@
     "long_name": "Debug Watchpoint Fault Address Register",
     "description": "Previously returned information about the address of the instruction that accessed a watchpointed address. Is now deprecated and RES0 .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGWFAR--Debug-Watchpoint-Fault-Address-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGWFAR--Debug-Watchpoint-Fault-Address-Register",
     "fields": [
       {
         "name": "RES0",
@@ -3002,7 +3002,7 @@
     "long_name": "Debug Watchpoint Value Registers",
     "description": "Holds a data address value for use in watchpoint matching. Forms watchpoint n together with control register DBGWCR<n> .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DBGWVR-n--Debug-Watchpoint-Value-Registers",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DBGWVR-n---Debug-Watchpoint-Value-Registers",
     "fields": [
       {
         "name": "VA",
@@ -3030,7 +3030,7 @@
     "long_name": "Data Fault Address Register",
     "description": "Holds the virtual address of the faulting address that caused a synchronous Data Abort exception.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DFAR--Data-Fault-Address-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DFAR--Data-Fault-Address-Register",
     "fields": [
       {
         "name": "VA",
@@ -3049,7 +3049,7 @@
     "long_name": "Debug Link Register",
     "description": "In Debug state, holds the address to restart from.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DLR--Debug-Link-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DLR--Debug-Link-Register",
     "fields": [
       {
         "name": "ADDR",
@@ -3068,7 +3068,7 @@
     "long_name": "Debug Saved Program Status Register",
     "description": "Holds the saved process state for Debug state. On entering Debug state, PSTATE information is written to this register. On exiting Debug state, values are copied from this register to PSTATE.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/DSPSR--Debug-Saved-Program-Status-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/DSPSR--Debug-Saved-Program-Status-Register",
     "fields": [
       {
         "name": "N",
@@ -3313,7 +3313,7 @@
     "long_name": "FCSE Process ID register",
     "description": "Identifies whether the Fast Context Switch Extension (FCSE) is implemented. From Armv8.0, the FCSE is not implemented, so this register is RAZ/WI. Software can access this register to determine that the implementation does not include the FCSE.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/FCSEIDR--FCSE-Process-ID-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/FCSEIDR--FCSE-Process-ID-register",
     "fields": [
       {
         "name": "RAZ/WI",
@@ -3332,7 +3332,7 @@
     "long_name": "Floating-Point Exception Control register",
     "description": "Provides a global enable for the implemented Advanced SIMD and floating-point functionality, and reports floating-point status information.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/FPEXC--Floating-Point-Exception-Control-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/FPEXC--Floating-Point-Exception-Control-register",
     "fields": [
       {
         "name": "EX",
@@ -3558,7 +3558,7 @@
     "long_name": "Floating-Point System ID register",
     "description": "Provides top-level information about the floating-point implementation. This register largely duplicates information held in the MIDR . Arm deprecates use of it.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/FPSID--Floating-Point-System-ID-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/FPSID--Floating-Point-System-ID-register",
     "fields": [
       {
         "name": "Implementer",
@@ -3652,7 +3652,7 @@
     "long_name": "Hyp Auxiliary Configuration Register",
     "description": "Controls trapping to Hyp mode of IMPLEMENTATION DEFINED aspects of Non-secure EL1 or EL0 operation.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/HACR--Hyp-Auxiliary-Configuration-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/HACR--Hyp-Auxiliary-Configuration-Register",
     "fields": [
       {
         "name": "IMPLEMENTATION DEFINED",
@@ -3671,7 +3671,7 @@
     "long_name": "Hyp Auxiliary Control Register",
     "description": "Controls IMPLEMENTATION DEFINED features of Hyp mode operation.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/HACTLR--Hyp-Auxiliary-Control-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/HACTLR--Hyp-Auxiliary-Control-Register",
     "fields": [
       {
         "name": "IMPLEMENTATION DEFINED",
@@ -3690,7 +3690,7 @@
     "long_name": "Hyp Auxiliary Control Register 2",
     "description": "Provides additional space to the HACTLR register to hold IMPLEMENTATION DEFINED trap functionality.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/HACTLR2--Hyp-Auxiliary-Control-Register-2",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/HACTLR2--Hyp-Auxiliary-Control-Register-2",
     "fields": [
       {
         "name": "IMPLEMENTATION DEFINED",
@@ -3709,7 +3709,7 @@
     "long_name": "Hyp Auxiliary Data Fault Status Register",
     "description": "Provides additional IMPLEMENTATION DEFINED syndrome information for Data Abort exceptions taken to Hyp mode.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/HADFSR--Hyp-Auxiliary-Data-Fault-Status-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/HADFSR--Hyp-Auxiliary-Data-Fault-Status-Register",
     "fields": [
       {
         "name": "IMPLEMENTATION DEFINED",
@@ -3728,7 +3728,7 @@
     "long_name": "Hyp Auxiliary Instruction Fault Status Register",
     "description": "Provides additional IMPLEMENTATION DEFINED syndrome information for Prefetch Abort exceptions taken to Hyp mode.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/HAIFSR--Hyp-Auxiliary-Instruction-Fault-Status-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/HAIFSR--Hyp-Auxiliary-Instruction-Fault-Status-Register",
     "fields": [
       {
         "name": "IMPLEMENTATION DEFINED",
@@ -3747,7 +3747,7 @@
     "long_name": "Hyp Auxiliary Memory Attribute Indirection Register 0",
     "description": "Provides IMPLEMENTATION DEFINED memory attributes for the memory attribute encodings defined by HMAIR0 . These IMPLEMENTATION DEFINED attributes can only provide additional qualifiers for the memory attribute encodings, and cannot change the memory attributes defined in HMAIR0 .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/HAMAIR0--Hyp-Auxiliary-Memory-Attribute-Indirection-Register-0",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/HAMAIR0--Hyp-Auxiliary-Memory-Attribute-Indirection-Register-0",
     "fields": [
       {
         "name": "IMPLEMENTATION DEFINED",
@@ -3766,7 +3766,7 @@
     "long_name": "Hyp Auxiliary Memory Attribute Indirection Register 1",
     "description": "Provides IMPLEMENTATION DEFINED memory attributes for the memory attribute encodings defined by HMAIR1 . These IMPLEMENTATION DEFINED attributes can only provide additional qualifiers for the memory attribute encodings, and cannot change the memory attributes defined in HMAIR1 .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/HAMAIR1--Hyp-Auxiliary-Memory-Attribute-Indirection-Register-1",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/HAMAIR1--Hyp-Auxiliary-Memory-Attribute-Indirection-Register-1",
     "fields": [
       {
         "name": "IMPLEMENTATION DEFINED",
@@ -3785,7 +3785,7 @@
     "long_name": "Hyp Data Fault Address Register",
     "description": "Holds the virtual address of the faulting address that caused a synchronous Data Abort exception that is taken to Hyp mode.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/HDFAR--Hyp-Data-Fault-Address-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/HDFAR--Hyp-Data-Fault-Address-Register",
     "fields": [
       {
         "name": "VA",
@@ -3804,7 +3804,7 @@
     "long_name": "Hyp Instruction Fault Address Register",
     "description": "Holds the virtual address of the faulting address that caused a synchronous Prefetch Abort exception that is taken to Hyp mode.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/HIFAR--Hyp-Instruction-Fault-Address-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/HIFAR--Hyp-Instruction-Fault-Address-Register",
     "fields": [
       {
         "name": "VA",
@@ -3823,7 +3823,7 @@
     "long_name": "Hyp Memory Attribute Indirection Register 0",
     "description": "Along with HMAIR1 , provides the memory attribute encodings corresponding to the possible AttrIndx values in a Long-descriptor format translation table entry for stage 1 translations for memory accesses from Hyp mode. AttrIndx[2] indicates the HMAIR register to be used: When AttrIndx[2] is 0, HMAIR0 is used. When AttrIndx[2] is 1, HMAIR1 is used.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/HMAIR0--Hyp-Memory-Attribute-Indirection-Register-0",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/HMAIR0--Hyp-Memory-Attribute-Indirection-Register-0",
     "fields": [
       {
         "name": "Attr<n>",
@@ -3842,7 +3842,7 @@
     "long_name": "Hyp Memory Attribute Indirection Register 1",
     "description": "Along with HMAIR0 , provides the memory attribute encodings corresponding to the possible AttrIndx values in a Long-descriptor format translation table entry for stage 1 translations for memory accesses from Hyp mode. AttrIndx[2] indicates the HMAIR register to be used: When AttrIndx[2] is 0, HMAIR0 is used. When AttrIndx[2] is 1, HMAIR1 is used.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/HMAIR1--Hyp-Memory-Attribute-Indirection-Register-1",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/HMAIR1--Hyp-Memory-Attribute-Indirection-Register-1",
     "fields": [
       {
         "name": "Attr<n>",
@@ -3861,7 +3861,7 @@
     "long_name": "Hyp IPA Fault Address Register",
     "description": "Holds the faulting IPA for some aborts on a stage 2 translation taken to Hyp mode.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/HPFAR--Hyp-IPA-Fault-Address-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/HPFAR--Hyp-IPA-Fault-Address-Register",
     "fields": [
       {
         "name": "FIPA[39:12]",
@@ -3889,7 +3889,7 @@
     "long_name": "Hyp Reset Management Register",
     "description": "If EL2 is the highest implemented Exception level and this register is implemented: A write to the register at EL2 can request a Warm reset. If EL2 can use AArch32 and AArch64, this register specifies the Execution state that the PE boots into on a Warm reset.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/HRMR--Hyp-Reset-Management-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/HRMR--Hyp-Reset-Management-Register",
     "fields": [
       {
         "name": "RES0",
@@ -3935,7 +3935,7 @@
     "long_name": "Hyp System Trap Register",
     "description": "Controls trapping to Hyp mode of Non-secure accesses, at EL1 or lower, to System registers in the coproc == 0b1111 encoding space: By the CRn value used to access the register using MCR or MRC instruction. By the CRm value used to access the register using MCRR or MRRC instruction.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/HSTR--Hyp-System-Trap-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/HSTR--Hyp-System-Trap-Register",
     "fields": [
       {
         "name": "RES0",
@@ -4116,7 +4116,7 @@
     "long_name": "Hyp Software Thread ID Register",
     "description": "Provides a location where software running in Hyp mode can store thread identifying information that is not visible to Non-secure software executing at EL0 or EL1, for hypervisor management purposes. The PE makes no use of this register.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/HTPIDR--Hyp-Software-Thread-ID-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/HTPIDR--Hyp-Software-Thread-ID-Register",
     "fields": [
       {
         "name": "TID",
@@ -4135,7 +4135,7 @@
     "long_name": "Hyp Vector Base Address Register",
     "description": "Holds the vector base address for any exception that is taken to Hyp mode.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/HVBAR--Hyp-Vector-Base-Address-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/HVBAR--Hyp-Vector-Base-Address-Register",
     "fields": [
       {
         "name": "VBA",
@@ -4163,7 +4163,7 @@
     "long_name": "Auxiliary Feature Register 0",
     "description": "Provides information about the IMPLEMENTATION DEFINED features of the PE in AArch32 state. Must be interpreted with the Main ID Register, MIDR . For general information about the interpretation of the ID registers see 'Principles of the ID scheme for fields in ID registers' .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/ID-AFR0--Auxiliary-Feature-Register-0",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/ID-AFR0--Auxiliary-Feature-Register-0",
     "fields": [
       {
         "name": "RES0",
@@ -4218,7 +4218,7 @@
     "long_name": "Debug Feature Register 0",
     "description": "Provides top-level information about the debug system in AArch32 state. Must be interpreted with the Main ID Register, MIDR . For general information about the interpretation of the ID registers see 'Principles of the ID scheme for fields in ID registers' .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/ID-DFR0--Debug-Feature-Register-0",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/ID-DFR0--Debug-Feature-Register-0",
     "fields": [
       {
         "name": "TraceFilt",
@@ -4439,7 +4439,7 @@
     "long_name": "Instruction Set Attribute Register 0",
     "description": "Provides information about the instruction sets implemented by the PE in AArch32 state. Must be interpreted with ID_ISAR1 , ID_ISAR2 , ID_ISAR3 , ID_ISAR4 , and ID_ISAR5 . For general information about the interpretation of the ID registers see 'Principles of the ID scheme for fields in ID registers' .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/ID-ISAR0--Instruction-Set-Attribute-Register-0",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/ID-ISAR0--Instruction-Set-Attribute-Register-0",
     "fields": [
       {
         "name": "RES0",
@@ -4600,7 +4600,7 @@
     "long_name": "Instruction Set Attribute Register 1",
     "description": "Provides information about the instruction sets implemented by the PE in AArch32 state. Must be interpreted with ID_ISAR0 , ID_ISAR2 , ID_ISAR3 , ID_ISAR4 , and ID_ISAR5 . For general information about the interpretation of the ID registers see 'Principles of the ID scheme for fields in ID registers' .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/ID-ISAR1--Instruction-Set-Attribute-Register-1",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/ID-ISAR1--Instruction-Set-Attribute-Register-1",
     "fields": [
       {
         "name": "Jazelle",
@@ -4766,7 +4766,7 @@
     "long_name": "Instruction Set Attribute Register 2",
     "description": "Provides information about the instruction sets implemented by the PE in AArch32 state. Must be interpreted with ID_ISAR0 , ID_ISAR1 , ID_ISAR3 , ID_ISAR4 , and ID_ISAR5 . For general information about the interpretation of the ID registers see 'Principles of the ID scheme for fields in ID registers' .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/ID-ISAR2--Instruction-Set-Attribute-Register-2",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/ID-ISAR2--Instruction-Set-Attribute-Register-2",
     "fields": [
       {
         "name": "Reversal",
@@ -4960,7 +4960,7 @@
     "long_name": "Instruction Set Attribute Register 3",
     "description": "Provides information about the instruction sets implemented by the PE in AArch32 state. Must be interpreted with ID_ISAR0 , ID_ISAR1 , ID_ISAR2 , ID_ISAR4 , and ID_ISAR5 . For general information about the interpretation of the ID registers see 'Principles of the ID scheme for fields in ID registers' .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/ID-ISAR3--Instruction-Set-Attribute-Register-3",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/ID-ISAR3--Instruction-Set-Attribute-Register-3",
     "fields": [
       {
         "name": "T32EE",
@@ -5122,7 +5122,7 @@
     "long_name": "Instruction Set Attribute Register 4",
     "description": "Provides information about the instruction sets implemented by the PE in AArch32 state. Must be interpreted with ID_ISAR0 , ID_ISAR1 , ID_ISAR2 , ID_ISAR3 , and ID_ISAR5 . For general information about the interpretation of the ID registers, see 'Principles of the ID scheme for fields in ID registers' .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/ID-ISAR4--Instruction-Set-Attribute-Register-4",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/ID-ISAR4--Instruction-Set-Attribute-Register-4",
     "fields": [
       {
         "name": "SWP_frac",
@@ -5288,7 +5288,7 @@
     "long_name": "Instruction Set Attribute Register 5",
     "description": "Provides information about the instruction sets implemented by the PE in AArch32 state. Must be interpreted with ID_ISAR0 , ID_ISAR1 , ID_ISAR2 , ID_ISAR3 , and ID_ISAR4 . For general information about the interpretation of the ID registers see 'Principles of the ID scheme for fields in ID registers' .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/ID-ISAR5--Instruction-Set-Attribute-Register-5",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/ID-ISAR5--Instruction-Set-Attribute-Register-5",
     "fields": [
       {
         "name": "VCMA",
@@ -5437,7 +5437,7 @@
     "long_name": "Memory Model Feature Register 1",
     "description": "Provides information about the implemented memory model and memory management support in AArch32 state. For general information about the interpretation of the ID registers see 'Principles of the ID scheme for fields in ID registers' .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/ID-MMFR1--Memory-Model-Feature-Register-1",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/ID-MMFR1--Memory-Model-Feature-Register-1",
     "fields": [
       {
         "name": "BPred",
@@ -5643,7 +5643,7 @@
     "long_name": "Memory Model Feature Register 3",
     "description": "Provides information about the implemented memory model and memory management support in AArch32 state. For general information about the interpretation of the ID registers see 'Principles of the ID scheme for fields in ID registers' .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/ID-MMFR3--Memory-Model-Feature-Register-3",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/ID-MMFR3--Memory-Model-Feature-Register-3",
     "fields": [
       {
         "name": "Supersec",
@@ -5813,7 +5813,7 @@
     "long_name": "Memory Model Feature Register 4",
     "description": "Provides information about the implemented memory model and memory management support in AArch32 state. For general information about the interpretation of the ID registers see 'Principles of the ID scheme for fields in ID registers' .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/ID-MMFR4--Memory-Model-Feature-Register-4",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/ID-MMFR4--Memory-Model-Feature-Register-4",
     "fields": [
       {
         "name": "EVT",
@@ -5984,7 +5984,7 @@
     "long_name": "Processor Feature Register 0",
     "description": "Gives top-level information about the instruction sets and other features supported by the PE in AArch32 state. Must be interpreted with ID_PFR1 . For general information about the interpretation of the ID registers, see 'Principles of the ID scheme for fields in ID registers' .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/ID-PFR0--Processor-Feature-Register-0",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/ID-PFR0--Processor-Feature-Register-0",
     "fields": [
       {
         "name": "RAS",
@@ -6162,7 +6162,7 @@
     "long_name": "Processor Feature Register 1",
     "description": "Gives information about the AArch32 programmers' model. Must be interpreted with ID_PFR0 . For general information about the interpretation of the ID registers see 'Principles of the ID scheme for fields in ID registers' .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/ID-PFR1--Processor-Feature-Register-1",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/ID-PFR1--Processor-Feature-Register-1",
     "fields": [
       {
         "name": "GIC",
@@ -6332,7 +6332,7 @@
     "long_name": "Instruction Fault Address Register",
     "description": "Holds the virtual address of the faulting address that caused a synchronous Prefetch Abort exception.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/IFAR--Instruction-Fault-Address-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/IFAR--Instruction-Fault-Address-Register",
     "fields": [
       {
         "name": "VA",
@@ -6351,7 +6351,7 @@
     "long_name": "Interrupt Status Register",
     "description": "Shows the pending status of the IRQ and FIQ interrupts and the SError exceptions.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/ISR--Interrupt-Status-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/ISR--Interrupt-Status-Register",
     "fields": [
       {
         "name": "RES0",
@@ -6433,7 +6433,7 @@
     "long_name": "Jazelle ID Register",
     "description": "A Jazelle register, which identified the Jazelle architecture version.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/JIDR--Jazelle-ID-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/JIDR--Jazelle-ID-Register",
     "fields": [
       {
         "name": "RAZ",
@@ -6452,7 +6452,7 @@
     "long_name": "Jazelle Main Configuration Register",
     "description": "A Jazelle register, which provides control of the Jazelle extension.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/JMCR--Jazelle-Main-Configuration-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/JMCR--Jazelle-Main-Configuration-Register",
     "fields": [
       {
         "name": "RAZ/WI",
@@ -6471,7 +6471,7 @@
     "long_name": "Jazelle OS Control Register",
     "description": "A Jazelle register, which provides operating system control of the Jazelle Extension.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/JOSCR--Jazelle-OS-Control-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/JOSCR--Jazelle-OS-Control-Register",
     "fields": [
       {
         "name": "RAZ/WI",
@@ -6490,7 +6490,7 @@
     "long_name": "Memory Attribute Indirection Register 0",
     "description": "Along with MAIR1 , provides the memory attribute encodings corresponding to the possible AttrIndx values in a Long-descriptor format translation table entry for stage 1 translations. AttrIndx[2] indicates the MAIR register to be used: When AttrIndx[2] is 0, MAIR0 is used. When AttrIndx[2] is 1, MAIR1 is used.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/MAIR0--Memory-Attribute-Indirection-Register-0",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/MAIR0--Memory-Attribute-Indirection-Register-0",
     "fields": [
       {
         "name": "Attr<n>",
@@ -6509,7 +6509,7 @@
     "long_name": "Memory Attribute Indirection Register 1",
     "description": "Along with MAIR0 , provides the memory attribute encodings corresponding to the possible AttrIndx values in a Long-descriptor format translation table entry for stage 1 translations. AttrIndx[2] indicates the MAIR register to be used: When AttrIndx[2] is 0, MAIR0 is used. When AttrIndx[2] is 1, MAIR1 is used.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/MAIR1--Memory-Attribute-Indirection-Register-1",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/MAIR1--Memory-Attribute-Indirection-Register-1",
     "fields": [
       {
         "name": "Attr<n>",
@@ -6528,7 +6528,7 @@
     "long_name": "Main ID Register",
     "description": "Provides identification information for the PE, including an implementer code for the device and a device ID number.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/MIDR--Main-ID-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/MIDR--Main-ID-Register",
     "fields": [
       {
         "name": "Implementer",
@@ -6673,7 +6673,7 @@
     "long_name": "Multiprocessor Affinity Register",
     "description": "In a multiprocessor system, provides an additional PE identification mechanism.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/MPIDR--Multiprocessor-Affinity-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/MPIDR--Multiprocessor-Affinity-Register",
     "fields": [
       {
         "name": "M",
@@ -6773,7 +6773,7 @@
     "long_name": "Monitor Vector Base Address Register",
     "description": "When EL3 is implemented and can use AArch32, holds the vector base address for any exception that is taken to Monitor mode. Secure software must program the MVBAR with the required initial value as part of the PE boot sequence.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/MVBAR--Monitor-Vector-Base-Address-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/MVBAR--Monitor-Vector-Base-Address-Register",
     "fields": [
       {
         "name": "VBA",
@@ -6801,7 +6801,7 @@
     "long_name": "Media and VFP Feature Register 0",
     "description": "Describes the features provided by the AArch32 Advanced SIMD and floating-point implementation. Must be interpreted with MVFR1 and MVFR2 . For general information about the interpretation of the ID registers see 'Principles of the ID scheme for fields in ID registers' .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/MVFR0--Media-and-VFP-Feature-Register-0",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/MVFR0--Media-and-VFP-Feature-Register-0",
     "fields": [
       {
         "name": "FPRound",
@@ -6967,7 +6967,7 @@
     "long_name": "Media and VFP Feature Register 1",
     "description": "Describes the features provided by the AArch32 Advanced SIMD and floating-point implementation. Must be interpreted with MVFR0 and MVFR2 . For general information about the interpretation of the ID registers see 'Principles of the ID scheme for fields in ID registers' .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/MVFR1--Media-and-VFP-Feature-Register-1",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/MVFR1--Media-and-VFP-Feature-Register-1",
     "fields": [
       {
         "name": "SIMDFMAC",
@@ -7133,7 +7133,7 @@
     "long_name": "Media and VFP Feature Register 2",
     "description": "Describes the features provided by the AArch32 Advanced SIMD and floating-point implementation. Must be interpreted with MVFR0 and MVFR1 . For general information about the interpretation of the ID registers see 'Principles of the ID scheme for fields in ID registers' .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/MVFR2--Media-and-VFP-Feature-Register-2",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/MVFR2--Media-and-VFP-Feature-Register-2",
     "fields": [
       {
         "name": "RES0",
@@ -7208,7 +7208,7 @@
     "long_name": "Non-Secure Access Control Register",
     "description": "When EL3 is implemented and can use AArch32, defines the Non-secure access permissions to Trace, Advanced SIMD and floating-point functionality. Also includes IMPLEMENTATION DEFINED bits that can define Non-secure access permissions for IMPLEMENTATION DEFINED functionality.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/NSACR--Non-Secure-Access-Control-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/NSACR--Non-Secure-Access-Control-Register",
     "fields": [
       {
         "name": "RES0",
@@ -7326,7 +7326,7 @@
     "long_name": "Performance Monitors Cycle Count Filter Register",
     "description": "Determines the modes in which the Cycle Counter, PMCCNTR , increments.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/PMCCFILTR--Performance-Monitors-Cycle-Count-Filter-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/PMCCFILTR--Performance-Monitors-Cycle-Count-Filter-Register",
     "fields": [
       {
         "name": "P",
@@ -7498,7 +7498,7 @@
     "long_name": "Performance Monitors Cycle Count Register",
     "description": "Holds the value of the processor Cycle Counter, CCNT, that counts processor clock cycles. See 'Time as measured by the Performance Monitors cycle counter' for more information. PMCCFILTR determines the modes and states in which the PMCCNTR can increment.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/PMCCNTR--Performance-Monitors-Cycle-Count-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/PMCCNTR--Performance-Monitors-Cycle-Count-Register",
     "fields": [
       {
         "name": "CCNT",
@@ -7517,7 +7517,7 @@
     "long_name": "Performance Monitors Common Event Identification register 0",
     "description": "Defines which Common architectural events and Common microarchitectural events are implemented, or counted, using PMU events in the range 0x0000 to 0x001F . For more information about the Common events and the use of the PMCEIDn registers, see 'The PMU event number space and common events' .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/PMCEID0--Performance-Monitors-Common-Event-Identification-register-0",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/PMCEID0--Performance-Monitors-Common-Event-Identification-register-0",
     "fields": [
       {
         "name": "ID<n>",
@@ -7545,7 +7545,7 @@
     "long_name": "Performance Monitors Common Event Identification register 1",
     "description": "Defines which Common architectural events and Common microarchitectural events are implemented, or counted, using PMU events in the range 0x0020 to 0x003F . For more information about the Common events and the use of the PMCEIDn registers see 'The PMU event number space and common events' .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/PMCEID1--Performance-Monitors-Common-Event-Identification-register-1",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/PMCEID1--Performance-Monitors-Common-Event-Identification-register-1",
     "fields": [
       {
         "name": "ID<n>",
@@ -7573,7 +7573,7 @@
     "long_name": "Performance Monitors Count Enable Clear register",
     "description": "Allows software to disable the following counters: The cycle counter PMCCNTR . The event counters PMEVCNTR<n> . Reading from this register shows which counters are enabled.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/PMCNTENCLR--Performance-Monitors-Count-Enable-Clear-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/PMCNTENCLR--Performance-Monitors-Count-Enable-Clear-register",
     "fields": [
       {
         "name": "C",
@@ -7619,7 +7619,7 @@
     "long_name": "Performance Monitors Count Enable Set register",
     "description": "Allows software to enable the following counters: The cycle counter PMCCNTR . The event counters PMEVCNTR<n> . Reading from this register shows which counters are enabled.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/PMCNTENSET--Performance-Monitors-Count-Enable-Set-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/PMCNTENSET--Performance-Monitors-Count-Enable-Set-register",
     "fields": [
       {
         "name": "C",
@@ -7665,7 +7665,7 @@
     "long_name": "Performance Monitors Event Count Registers",
     "description": "Holds event counter n, which counts events, where n is 0 to 30.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/PMEVCNTR-n--Performance-Monitors-Event-Count-Registers",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/PMEVCNTR-n---Performance-Monitors-Event-Count-Registers",
     "fields": [
       {
         "name": "EVCNT",
@@ -7684,7 +7684,7 @@
     "long_name": "Performance Monitors Event Type Registers",
     "description": "Configures event counter n, where n is 0 to 30.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/PMEVTYPER-n--Performance-Monitors-Event-Type-Registers",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/PMEVTYPER-n---Performance-Monitors-Event-Type-Registers",
     "fields": [
       {
         "name": "P",
@@ -7919,7 +7919,7 @@
     "long_name": "Performance Monitors Interrupt Enable Clear register",
     "description": "Allows software to disable the generation of interrupt requests on overflows from the following counters: The cycle counter PMCCNTR . The event counters PMEVCNTR<n> . Reading from this register shows which overflow interrupt requests are enabled.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/PMINTENCLR--Performance-Monitors-Interrupt-Enable-Clear-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/PMINTENCLR--Performance-Monitors-Interrupt-Enable-Clear-register",
     "fields": [
       {
         "name": "C",
@@ -7965,7 +7965,7 @@
     "long_name": "Performance Monitors Interrupt Enable Set register",
     "description": "Allows software to enable the generation of interrupt requests on overflows from the following counters: The cycle counter PMCCNTR . The event counters PMEVCNTR<n> . Reading from this register shows which overflow interrupt requests are enabled.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/PMINTENSET--Performance-Monitors-Interrupt-Enable-Set-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/PMINTENSET--Performance-Monitors-Interrupt-Enable-Set-register",
     "fields": [
       {
         "name": "C",
@@ -8011,7 +8011,7 @@
     "long_name": "Performance Monitors Overflow Flag Status Register",
     "description": "Allows software to clear the unsigned overflow flags for the following counters to 0: The cycle counter PMCCNTR . The event counters PMEVCNTR<n> . Reading from this register shows the current unsigned overflow flag values.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/PMOVSR--Performance-Monitors-Overflow-Flag-Status-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/PMOVSR--Performance-Monitors-Overflow-Flag-Status-Register",
     "fields": [
       {
         "name": "C",
@@ -8057,7 +8057,7 @@
     "long_name": "Performance Monitors Overflow Flag Status Set register",
     "description": "Allows software to set the unsigned overflow flags for the following counters to 1: The cycle counter PMCCNTR . The event counters PMEVCNTR<n> . Reading from this register shows the current unsigned overflow flag values.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/PMOVSSET--Performance-Monitors-Overflow-Flag-Status-Set-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/PMOVSSET--Performance-Monitors-Overflow-Flag-Status-Set-register",
     "fields": [
       {
         "name": "C",
@@ -8103,7 +8103,7 @@
     "long_name": "Performance Monitors Event Counter Selection Register",
     "description": "Selects the current event counter PMEVCNTR<n> or the cycle counter PMCCNTR . Used in conjunction with PMXEVTYPER to determine the event that increments a selected counter, and the modes and states in which the selected counter increments. Used in conjunction with PMXEVCNTR to determine the value of a selected counter.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/PMSELR--Performance-Monitors-Event-Counter-Selection-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/PMSELR--Performance-Monitors-Event-Counter-Selection-Register",
     "fields": [
       {
         "name": "RES0",
@@ -8140,7 +8140,7 @@
     "long_name": "Performance Monitors Software Increment register",
     "description": "Increments a counter that is configured to count the Software increment event, event 0x00 . For more information, see 'SW_INCR' .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/PMSWINC--Performance-Monitors-Software-Increment-register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/PMSWINC--Performance-Monitors-Software-Increment-register",
     "fields": [
       {
         "name": "RES0",
@@ -8177,7 +8177,7 @@
     "long_name": "Performance Monitors User Enable Register",
     "description": "Enables or disables EL0 access to the Performance Monitors.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/PMUSERENR--Performance-Monitors-User-Enable-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/PMUSERENR--Performance-Monitors-User-Enable-Register",
     "fields": [
       {
         "name": "RES0",
@@ -8304,7 +8304,7 @@
     "long_name": "Performance Monitors Selected Event Count Register",
     "description": "Reads or writes the value of the selected event counter, PMEVCNTR<n> . PMSELR .SEL determines which event counter is selected.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/PMXEVCNTR--Performance-Monitors-Selected-Event-Count-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/PMXEVCNTR--Performance-Monitors-Selected-Event-Count-Register",
     "fields": [
       {
         "name": "PMEVCNTR<n>",
@@ -8323,7 +8323,7 @@
     "long_name": "Performance Monitors Selected Event Type Register",
     "description": "When PMSELR .SEL selects an event counter, this accesses a PMEVTYPER<n> register. When PMSELR .SEL selects the cycle counter, this accesses PMCCFILTR .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/PMXEVTYPER--Performance-Monitors-Selected-Event-Type-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/PMXEVTYPER--Performance-Monitors-Selected-Event-Type-Register",
     "fields": [
       {
         "name": "ETR",
@@ -8342,7 +8342,7 @@
     "long_name": "Revision ID Register",
     "description": "Provides implementation-specific minor revision information.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/REVIDR--Revision-ID-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/REVIDR--Revision-ID-Register",
     "fields": [
       {
         "name": "IMPLEMENTATION DEFINED",
@@ -8361,7 +8361,7 @@
     "long_name": "Reset Vector Base Address Register",
     "description": "If EL3 is not implemented, contains the IMPLEMENTATION DEFINED address that execution starts from after reset when executing in AArch32 state.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/RVBAR--Reset-Vector-Base-Address-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/RVBAR--Reset-Vector-Base-Address-Register",
     "fields": [
       {
         "name": "ResetAddress",
@@ -8389,7 +8389,7 @@
     "long_name": "Saved Program Status Register",
     "description": "Holds the saved process state for the current mode.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/SPSR--Saved-Program-Status-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/SPSR--Saved-Program-Status-Register",
     "fields": [
       {
         "name": "N",
@@ -8634,7 +8634,7 @@
     "long_name": "TCM Type Register",
     "description": "Provides information about the implementation of the TCM.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/TCMTR--TCM-Type-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/TCMTR--TCM-Type-Register",
     "fields": [
       {
         "name": "IMPLEMENTATION DEFINED",
@@ -8653,7 +8653,7 @@
     "long_name": "PL1 Software Thread ID Register",
     "description": "Provides a location where software executing at EL1 or higher can store thread identifying information that is not visible to software executing at EL0, for OS management purposes. The PE makes no use of this register.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/TPIDRPRW--PL1-Software-Thread-ID-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/TPIDRPRW--PL1-Software-Thread-ID-Register",
     "fields": [
       {
         "name": "TID",
@@ -8672,7 +8672,7 @@
     "long_name": "PL0 Read-Only Software Thread ID Register",
     "description": "Provides a location where software executing at EL1 or higher can store thread identifying information that is visible to software executing at EL0, for OS management purposes. The PE makes no use of this register.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/TPIDRURO--PL0-Read-Only-Software-Thread-ID-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/TPIDRURO--PL0-Read-Only-Software-Thread-ID-Register",
     "fields": [
       {
         "name": "TID",
@@ -8691,7 +8691,7 @@
     "long_name": "PL0 Read/Write Software Thread ID Register",
     "description": "Provides a location where software executing at EL0 can store thread identifying information, for OS management purposes. The PE makes no use of this register.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/TPIDRURW--PL0-Read-Write-Software-Thread-ID-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/TPIDRURW--PL0-Read-Write-Software-Thread-ID-Register",
     "fields": [
       {
         "name": "TID",
@@ -8710,7 +8710,7 @@
     "long_name": "Vector Base Address Register",
     "description": "When high exception vectors are not selected, holds the vector base address for exceptions that are not taken to Monitor mode or to Hyp mode. Software must program VBAR(NS) with the required initial value as part of the PE boot sequence.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/VBAR--Vector-Base-Address-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/VBAR--Vector-Base-Address-Register",
     "fields": [
       {
         "name": "VBA",
@@ -8738,7 +8738,7 @@
     "long_name": "Virtualization Multiprocessor ID Register",
     "description": "Holds the value of the Virtualization Multiprocessor ID. This is the value returned by Non-secure EL1 reads of MPIDR , which in a multiprocessor system, provides an additional PE identification system.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/VMPIDR--Virtualization-Multiprocessor-ID-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/VMPIDR--Virtualization-Multiprocessor-ID-Register",
     "fields": [
       {
         "name": "M",
@@ -8838,7 +8838,7 @@
     "long_name": "Virtualization Processor ID Register",
     "description": "Holds the value of the Virtualization Processor ID. This is the value returned by Non-secure EL1 reads of MIDR .",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/VPIDR--Virtualization-Processor-ID-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/VPIDR--Virtualization-Processor-ID-Register",
     "fields": [
       {
         "name": "Implementer",
@@ -9512,7 +9512,7 @@
     "long_name": "Floating-Point Status and Control Register",
     "description": "Provides floating-point system status information and control.",
     "state": "AArch32",
-    "arm_url": "https://developer.arm.com/documentation/ddi0601/latest/AArch32-Registers/FPSCR--Floating-Point-Status-and-Control-Register",
+    "arm_url": "https://developer.arm.com/documentation/111107/latest/AArch32-Registers/FPSCR--Floating-Point-Status-and-Control-Register",
     "fields": [
       {
         "name": "N",

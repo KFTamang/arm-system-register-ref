@@ -23,6 +23,15 @@ python3 scripts/parse_aarchmrs.py AARCHMRS_OPENSOURCE_A_profile_FAT-2025-12/
 # Writes data/registers.json  (~1761 registers: AArch64 + AArch32 + External)
 ```
 
+Then add the EC-dependent ISS/ISS2 encodings (ESR_ELx, HSR, PMBSR_ELx, TRBSR_ELx) and refresh the ARM ARM links, and regenerate the R-profile data:
+
+```sh
+python3 scripts/add_iss_encodings.py AARCHMRS_OPENSOURCE_A_profile_FAT-2026-09/
+python3 scripts/gen_r_profile.py
+```
+
+In the data, the controlling field (EC) has `links: {"<EC value>": {"ISS": "<id>", ...}}`, and the dynamic field (ISS) has `instances: {"<id>": {display, fields[]}}`. `app.js` renders the fields of the selected instance as sub-rows.
+
 The older `scripts/parse_sysreg.py` (SysReg XML tarball → AArch64 only, with field descriptions) is kept for reference.
 
 ## Running Locally
@@ -58,6 +67,6 @@ scripts/
 
 Register pages follow the pattern:
 ```
-https://developer.arm.com/documentation/ddi0601/latest/AArch64-Registers/{slug}
+https://developer.arm.com/documentation/111107/latest/AArch64-Registers/{slug}
 ```
-where `slug = {SHORT-NAME}--{Long-Name-With-Hyphens}-`, constructed in `parse_sysreg.py:make_arm_url()`.
+(document 111107 is the successor of DDI0601). `slug` is `"{short name}, {long name}"` with every non-alphanumeric character replaced by its own `-` (no collapsing or stripping), e.g. `ESR-EL1--Exception-Syndrome-Register--EL1-`. Constructed in `parse_sysreg.py:make_arm_url()`.
